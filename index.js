@@ -1,6 +1,7 @@
 (async function(){
     const express = require('express')
     const app = express()
+    const sitemap = require('./lib/sitemap')
     
   // -=-=-=-=-=-=-=-=-=-=-=-=-=-= handlebars: start -=-=-=-=-=-=-=-=-=-=-=-=-=-=
   const exphbs = require('express-handlebars');
@@ -11,6 +12,13 @@
   app.engine('handlebars', hbs.engine);
   app.set('view engine', 'handlebars');
   // -=-=-=-=-=-=-=-=-=-=-=-=-=-= handlebars: end -=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  app.get('/sitemap.xml', (req,res) => {
+    const subSitemap = [
+      '/jobs/sitemap.xml'
+    ]
+    res.header('Content-Type', 'application/xml');
+    return res.send(sitemap.sitemapList(subSitemap, req))
+  })
 
   app.use('/jobs', await require('./routers/post')())
 
