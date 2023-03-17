@@ -1,0 +1,14 @@
+<article id="post-{{id}}">
+	<header class="entry-header">
+	  <h1 class="entry-title">{{title}}</h1>
+    <p>
+      Created At 創建日期: {{easyReadDateFormat date}} 
+    </p>
+    <p>
+      <span> {{categories}} </span>
+    </p>
+	</header><!-- .entry-header -->
+	<div class="entry-content" style="white-space: pre-wrap;">
+		{{{content}}}
+	</div><!-- .entry-content -->
+</article><!-- #post-<?php the_ID(); ?> -->

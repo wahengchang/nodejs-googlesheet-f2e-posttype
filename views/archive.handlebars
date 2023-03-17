@@ -1,0 +1,27 @@
+<main id="primary" class="site-main">
+    <header class="page-header">
+        {{#if items}}
+        <p>There is {{items.length}} Job(s).</p>
+        {{#each items}}
+        <a href="{{uri}}">
+            <div>
+                <h3>{{title}}</h3>
+                <span>
+                    {{excerpt}}
+                </span>
+                <span>
+                    Created At 創建日期: {{easyReadDateFormat date}}
+                </span>
+                <span>
+                    <span> {{categories}} </span>
+                </span>
+            </div>
+        </a>
+        {{/each}}
+        {{else}}
+        <p>
+            There is no Job 目前沒有工作
+        </p>
+        {{/if}}
+    </header><!-- .page-header -->
+</main><!-- #main -->

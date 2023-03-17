@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-googlesheet-f2e-posttype",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "googleapis": "^110.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "ENV=dev npx nodemon index.js -e js",
+    "test": "jest"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": ">=8.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "jest-circus": "^29.5.0",
+    "jest-jasmine2": "^29.5.0",
+    "nodemon": "^2.0.20"
+  }
+}
